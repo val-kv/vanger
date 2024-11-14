@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider Page</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slick-theme.css' %}">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="slider-for">
+            {% for item in slider_items %}
+                <div>
+                    <img src="{{ item.image.url }}" alt="{{ item.title }}" class="img-fluid">
+                </div>
+            {% endfor %}
+        </div>
+        <div class="slider-nav">
+            {% for item in slider_items %}
+                <div>
+                    <img src="{{ item.image.url }}" alt="{{ item.title }}" class="img-thumbnail">
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/slick.min.js' %}"></script>
+    <script>
+        $(document).ready(function(){
+            $('.slider-for').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                fade: true,
+                asNavFor: '.slider-nav'
+            });
+            $('.slider-nav').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                asNavFor: '.slider-for',
+                dots: true,
+                centerMode: true,
+                focusOnSelect: true
+            });
+        });
+    </script>
+</body>
+</html>
