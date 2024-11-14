@@ -8,9 +8,80 @@
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/slick.css' %}">
     <link rel="stylesheet" href="{% static 'css/slick-theme.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
+    <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-5">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+        <!-- Логотип -->
+        <a class="navbar-brand" href="#">
+            <img src="static/img/logo.svg" alt="NASA" >
+        </a>
+        <!-- Меню -->
+        <div class="collapse navbar-collapse justify-content-center">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#s">Преимущества</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Фотографии</a>
+                </li>
+            </ul>
+        </div>
+        <!-- Кнопка входа -->
+        <a href="#" class="btn btn-danger">Вход</a>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-section text-center py-5">
+    <div class="container">
+        <h1 class="display-4 fw-bold">Космическое агентство</h1>
+        <p class="lead">Национальное управление по аэронавтике и исследованию космического пространства — ведомство, относящееся к федеральному правительству США и подчиняющееся непосредственно президенту США.</p>
+    </div>
+</section>
+
+<!-- Advantages Section -->
+<section id="advantages" class="advantages-section py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center">
+                <div class="row">
+                    <div class="col-6 mb-4">
+                        <div class="advantage-icon mb-2">
+                            <img src="static/img/img-1.png" alt="img1" class="img-1">
+                        </div>
+                        <p>Запуск спутника — пилотируемые корабли</p>
+                    </div>
+                    <div class="col-6 mb-4">
+                        <div class="advantage-icon mb-2">
+                            <img src="static/img/img-2.png" alt="img2" class="img-2">
+                        </div>
+                        <p>Лучшее телескопическое оборудование</p>
+                    </div>
+                    <div class="col-6 mb-4">
+                        <div class="advantage-icon mb-2">
+                            <img src="static/img/img-3.png" alt="img3" class="img-3">
+                        </div>
+                        <p>Целимся на Луну и Марс</p>
+                    </div>
+                    <div class="col-6 mb-4">
+                        <div class="advantage-icon mb-2">
+                            <img src="static/img/img-4.png" alt="img4" class="img-4">
+                        </div>
+                        <p>Золотые медали по научным исследованиям</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img src="static/img/space.jpeg" alt="space" class="img-rounded">
+            </div>
+        </div>
+    </div>
+</section>
     <div class="container mt-5">
+        <h2 class="text-center mb-4">Фотографии</h2>
         <div class="slider-for">
             {% for item in slider_items %}
                 <div>
