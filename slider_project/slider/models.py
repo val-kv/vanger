@@ -1,9 +1,8 @@
 from django.db import models
 from filer.fields.image import FilerImageField
-from adminsortable2.admin import SortableAdminMixin
 
 
-class SliderItem(SortableAdminMixin, models.Model):
+class SliderItem(models.Model):
     title = models.CharField(max_length=255, verbose_name="Заголовок")
     image = FilerImageField(related_name="slider_images", on_delete=models.CASCADE, verbose_name="Изображение")
     description = models.TextField(blank=True, null=True, verbose_name="Описание")
