@@ -14,4 +14,4 @@ class SliderItem(models.Model):
 
     def __str__(self):
         return self.title
-rr
+rrer
