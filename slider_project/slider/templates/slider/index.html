@@ -82,6 +82,16 @@
 </section>
     <div class="container mt-5">
         <h2 class="text-center mb-4">Фотографии</h2>
+        {% load thumbnail %}
+        <div class="slider">
+            {% for slide in slides %}
+                <div class="slide">
+                <img src="{{ slide.image|thumbnail_url:'default' }}" alt="{{ slide.title }}">
+                <h3>{{ slide.title }}</h3>
+                <p>{{ slide.description }}</p>
+                </div>
+            {% endfor %}
+        </div>
         <div class="slider-for">
             {% for item in slider_items %}
                 <div>

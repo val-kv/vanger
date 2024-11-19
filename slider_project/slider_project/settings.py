@@ -136,3 +136,18 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 SITE_ID = 1
+
+THUMBNAIL_ALIASES = {
+    '': {
+        'default': {
+            'size': (300, 300),  # Размеры по умолчанию
+            'crop': 'smart',    # Умное кадрирование
+        },
+        'admin_thumbnail': {
+            'size': (100, 100), # Миниатюры для админки
+            'crop': 'smart',    # Умное кадрирование
+        },
+    },
+}
+
+THUMBNAIL_DEBUG = True
